@@ -14,7 +14,7 @@ export const metadata = {
     description: "Landing is a SaaS template for developers to build SaaS applications.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <body>

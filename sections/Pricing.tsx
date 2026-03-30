@@ -21,8 +21,8 @@ export default function Pricing() {
                                 <p>Most Popular</p>
                             </div>
                         )}
-                        <p className={plan.mostPopular && "text-white"}>{plan.title}</p>
-                        <h4 className={`text-3xl font-semibold mt-1 ${plan.mostPopular && "text-white"}`}>${plan.price}<span className={`font-normal text-sm ${plan.mostPopular ? "text-white" : "text-slate-300"}`}>/mo</span></h4>
+                        <p className={plan.mostPopular ? "text-white" : ""}>{plan.title}</p>
+                        <h4 className={`text-3xl font-semibold mt-1 ${plan.mostPopular ? "text-white" : ""}`}>${plan.price}<span className={`font-normal text-sm ${plan.mostPopular ? "text-white" : "text-slate-300"}`}>/mo</span></h4>
                         <hr className={`my-8 ${plan.mostPopular ? "border-gray-300" : "border-slate-300 dark:border-slate-700"}`} />
                         <div className={`space-y-2 ${plan.mostPopular ? "text-white" : "text-slate-600 dark:text-slate-300"}`}>
                             {plan.features.map((feature, index) => (

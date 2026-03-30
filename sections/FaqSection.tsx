@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export const FaqSection = () => {
     const { theme } = useThemeContext();
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
     return (
         <div className="relative max-w-2xl mx-auto flex flex-col items-center justify-center px-4 md:px-0">
             <Image className="absolute -mb-120 -left-40 -z-10 pointer-events-none" src={theme === "dark" ? "/assets/color-splash.svg" : "/assets/color-splash-light.svg"} alt="color-splash" width={1000} height={1000} priority fetchPriority="high" />
