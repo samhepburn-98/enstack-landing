@@ -12,10 +12,10 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
                 <div className="md:max-w-114">
                     <a href="/">
-                        <Image className="h-9 md:h-9.5 w-auto shrink-0" src={theme === "dark" ? "/assets/logo-light.svg" : "/assets/logo-dark.svg"} alt="Logo" width={140} height={40} priority fetchPriority="high" />
+                        <Image className="h-9 md:h-9.5 w-auto shrink-0" src={theme === "dark" ? "/assets/logo-light.svg" : "/assets/logo-dark.svg"} alt="Logo" width={407} height={88} priority fetchPriority="high" />
                     </a>
                     <p className="mt-6">
-                        EnStack builds apps, websites, and brands for businesses that want to move fast and look great doing it.
+                        We build our own digital products and help other businesses do the same — apps, websites, and brand design.
                     </p>
                 </div>
                 <div className="flex-1 flex items-start md:justify-end gap-20">
@@ -24,7 +24,7 @@ export default function Footer() {
                         <ul className="space-y-2">
                             {navLinks.map((link, index) => (
                                 <li key={index}>
-                                    <Link href={link.href} className="hover:text-purple-600 transition">{link.name}</Link>
+                                    <Link href={link.href} className="hover:text-[#00DCC2] transition">{link.name}</Link>
                                 </li>
                             ))}
                         </ul>

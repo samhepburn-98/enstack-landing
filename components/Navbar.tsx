@@ -22,7 +22,7 @@ export default function Navbar() {
     return (
         <nav className={`flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 ${openMobileMenu ? '' : 'backdrop-blur'}`}>
             <a href="/">
-                <Image className="h-9 md:h-9.5 w-auto shrink-0" src={theme === "dark" ? "/assets/logo-light.svg" : "/assets/logo-dark.svg"} alt="Logo" width={140} height={40} priority fetchPriority="high" />
+                <Image className="h-9 md:h-9.5! w-auto shrink-0" src={theme === "dark" ? "/assets/logo-light.svg" : "/assets/logo-dark.svg"} alt="Logo" width={407} height={88} priority fetchPriority="high" />
             </a>
             <div className="hidden items-center md:gap-8 lg:gap-9 md:flex lg:pl-20"/>
             {/* Mobile menu */}
@@ -35,13 +35,13 @@ export default function Navbar() {
                 <button>
                     Sign in
                 </button>
-                <button className="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-md flex" onClick={() => setOpenMobileMenu(false)}>
+                <button className="aspect-square size-10 p-1 items-center justify-center bg-[#00DCC2] hover:bg-[#00DCC2]/80 transition text-[#042B31] rounded-md flex" onClick={() => setOpenMobileMenu(false)}>
                     <XIcon />
                 </button>
             </div>
             <div className="flex items-center gap-4">
                 <ThemeToggle />
-                <a className="hidden md:flex font-medium items-center justify-center hover:bg-slate-100 dark:hover:bg-purple-950 transition px-4 py-2 border border-purple-600 rounded-md">
+                <a className="hidden md:flex font-medium items-center justify-center hover:bg-slate-100 dark:hover:bg-[#00DCC2]/10 transition px-4 py-2 border border-[#00DCC2] rounded-md">
                     Contact
                 </a>
                 <button onClick={() => setOpenMobileMenu(!openMobileMenu)} className="md:hidden">

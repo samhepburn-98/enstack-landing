@@ -1,24 +1,24 @@
-import { CodeIcon, PaletteIcon, SmartphoneIcon, ZapIcon } from "lucide-react";
+import { CodeIcon, LightbulbIcon, PaletteIcon, SmartphoneIcon } from "lucide-react";
 
 export const featuresData = [
     {
         icon: SmartphoneIcon,
-        title: "App development",
-        description: "Native and cross-platform apps built for performance and usability.",
+        title: "Our own products",
+        description: "We design and build apps in-house — ideas we believe in, taken from concept to launch.",
     },
     {
         icon: CodeIcon,
-        title: "Web development",
-        description: "Fast, responsive websites and web apps tailored to your business.",
+        title: "App & web development",
+        description: "Full-stack development for clients who need reliable, well-built digital products.",
     },
     {
         icon: PaletteIcon,
         title: "Brand design",
-        description: "Logos, visual identity, and design systems that make you stand out.",
+        description: "Identity, visual systems, and creative direction that give brands a distinct edge.",
     },
     {
-        icon: ZapIcon,
-        title: "Built to scale",
-        description: "Modern tech stacks and clean architecture that grow with you.",
+        icon: LightbulbIcon,
+        title: "Consulting",
+        description: "Product strategy and technical guidance for teams figuring out what to build and how.",
     },
 ];

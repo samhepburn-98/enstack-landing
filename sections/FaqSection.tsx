@@ -15,7 +15,7 @@ export const FaqSection = () => {
             <SectionTitle text1="FAQ's" text2="Frequently asked questions" text3="Common questions about working with EnStack." />
             <div className="mt-8">
                 {faqsData.map((faq, index) => (
-                    <div className="border-b border-slate-300 dark:border-purple-900 py-4 cursor-pointer w-full" key={index} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+                    <div className="border-b border-slate-300 dark:border-[#00DCC2]/20 py-4 cursor-pointer w-full" key={index} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                         <div className="flex items-center justify-between">
                             <h3 className="text-base font-medium">
                                 {faq.question}

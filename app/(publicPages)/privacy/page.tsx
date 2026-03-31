@@ -80,7 +80,7 @@ export default function PrivacyPage() {
                         {"email" in section && section.email && (
                             <a
                                 href={`mailto:${section.email}`}
-                                className="inline-block mt-2 text-purple-600 hover:underline"
+                                className="inline-block mt-2 text-[#00DCC2] hover:underline"
                             >
                                 {section.email}
                             </a>

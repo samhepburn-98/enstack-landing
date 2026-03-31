@@ -12,13 +12,13 @@ const poppins = Poppins({
 
 export const metadata = {
     title: "EnStack — Apps, Websites & Brand Design",
-    description: "EnStack builds apps, websites, and brands that help businesses grow.",
+    description: "We build our own digital products and help other businesses do the same — apps, websites, and brand design.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en">
-            <body>
+            <body className={poppins.variable}>
                 <ThemeContextProvider>
                     <LenisScroll />
                     {children}
