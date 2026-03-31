@@ -1,3 +1,4 @@
+import { type ReactNode } from "react";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeContextProvider } from "@/context/ThemeContext";
@@ -10,11 +11,11 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-    title: "Landing - PrebuiltUI",
-    description: "Landing is a SaaS template for developers to build SaaS applications.",
+    title: "EnStack — Apps, Websites & Brand Design",
+    description: "EnStack builds apps, websites, and brands that help businesses grow.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en">
             <body>

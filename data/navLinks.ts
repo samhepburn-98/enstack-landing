@@ -1,18 +1,6 @@
 export const navLinks = [
     {
-        name: "Home",
-        href: "/",
+        name: "Privacy Policy",
+        href: "/privacy",
     },
-    {
-        name: "Features",
-        href: "#features",
-    },
-    {
-        name: "Pricing",
-        href: "#pricing",
-    },
-    {
-        name: "Docs",
-        href: "#docs",
-    }
 ];

@@ -1,22 +1,22 @@
 export const faqsData = [
     {
-        question: "What is this SaaS app used for?",
-        answer: "This app helps businesses manage their workflows more efficiently by automating tasks, tracking performance, and integrating with third-party tools."
+        question: "What services does EnStack offer?",
+        answer: "We design and build apps, websites, and brand identities. Whether you need a mobile app, a marketing site, or a full visual rebrand, we can help."
     },
     {
-        question: "Is there a free trial available?",
-        answer: "Yes, we offer a 14-day free trial with full access to all features. No credit card is required to start the trial."
+        question: "How does a typical project work?",
+        answer: "We start with a discovery call to understand your goals, then move through design, development, and launch. You'll have visibility at every stage."
     },
     {
-        question: "Can I change my subscription plan later?",
-        answer: "Absolutely! You can upgrade or downgrade your plan at any time from your account settings."
+        question: "How long does a project usually take?",
+        answer: "It depends on scope. A simple website might take a few weeks, while a full app build could take a couple of months. We'll give you a clear timeline upfront."
     },
     {
-        question: "How is my data secured?",
-        answer: "We use industry-standard encryption, regular security audits, and secure data centers to ensure your data is safe and protected."
+        question: "Do you work with early-stage startups?",
+        answer: "Absolutely. We work with businesses of all sizes, from founders with an idea to established companies looking to level up their digital presence."
     },
     {
-        question: "Do you offer customer support?",
-        answer: "Yes, our support team is available 24/7 via live chat and email. We also have a help center with detailed documentation and tutorials."
+        question: "How do I get started?",
+        answer: "Just reach out via email. We'll arrange a call to discuss your project and see how we can help."
     }
 ];
