@@ -32,16 +32,13 @@ export default function Navbar() {
                         {link.name}
                     </Link>
                 ))}
-                <button>
-                    Sign in
-                </button>
                 <button className="aspect-square size-10 p-1 items-center justify-center bg-[#00DCC2] hover:bg-[#00DCC2]/80 transition text-[#042B31] rounded-md flex" onClick={() => setOpenMobileMenu(false)}>
                     <XIcon />
                 </button>
             </div>
             <div className="flex items-center gap-4">
                 <ThemeToggle />
-                <a className="hidden md:flex font-medium items-center justify-center hover:bg-slate-100 dark:hover:bg-[#00DCC2]/10 transition px-4 py-2 border border-[#00DCC2] rounded-md">
+                <a href="mailto:hello@enstack.co.uk" className="hidden md:flex font-medium items-center justify-center hover:bg-slate-100 dark:hover:bg-[#00DCC2]/10 transition px-4 py-2 border border-[#00DCC2] rounded-md">
                     Contact
                 </a>
                 <button onClick={() => setOpenMobileMenu(!openMobileMenu)} className="md:hidden">
