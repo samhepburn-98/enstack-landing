@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button
+  aria-label="Toggle theme"
+  data-theme-toggle
+  class="flex items-center justify-center size-9 p-2 rounded-full bg-[#042B31]/5 hover:bg-[#042B31]/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out"
+>
+  <Icon name="lucide:moon" class="size-5 hidden dark:block" />
+  <Icon name="lucide:sun" class="size-5 block dark:hidden" />
+</button>
+
+<script>
+  function setTheme(theme: "light" | "dark") {
+    const html = document.documentElement;
+    if (theme === "dark") html.classList.add("dark");
+    else html.classList.remove("dark");
+    localStorage.setItem("theme", theme);
+  }
+
+  function init() {
+    document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setTheme(isDark ? "light" : "dark");
+      });
+    });
+  }
+
+  // run on initial load and after Astro view transitions (if added later)
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>

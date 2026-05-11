@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { faqsData } from "@/data/faqsData";
+import SectionTitle from "@/components/SectionTitle.astro";
+---
+
+<div class="relative max-w-2xl mx-auto flex flex-col items-center justify-center px-4 md:px-0">
+  <img
+    src="/assets/color-splash-light.svg"
+    alt="color-splash"
+    class="absolute -mb-120 -left-40 -z-10 pointer-events-none block dark:hidden"
+    width="1000"
+    height="1000"
+  />
+  <img
+    src="/assets/color-splash.svg"
+    alt="color-splash"
+    class="absolute -mb-120 -left-40 -z-10 pointer-events-none hidden dark:block"
+    width="1000"
+    height="1000"
+  />
+
+  <SectionTitle
+    text1="FAQ's"
+    text2="Frequently asked questions"
+    text3="Common questions about working with EnStack."
+  />
+
+  <div class="mt-8 w-full">
+    {faqsData.map((faq) => (
+      <details class="group border-b border-slate-300 dark:border-[#00DCC2]/20 py-4 w-full">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h3 class="text-base font-medium">{faq.question}</h3>
+          <Icon
+            name="lucide:chevron-down"
+            class="size-[18px] transition-transform duration-500 ease-in-out group-open:rotate-180"
+          />
+        </summary>
+        <p class="text-sm text-slate-600 dark:text-slate-300 max-w-xl pt-4">
+          {faq.answer}
+        </p>
+      </details>
+    ))}
+  </div>
+</div>

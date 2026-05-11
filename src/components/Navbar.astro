@@ -1,0 +1,75 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { navLinks } from "@/data/navLinks";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+---
+
+<nav
+  data-navbar
+  class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur"
+>
+  <a href="/">
+    <img src="/assets/logo-dark.svg" alt="Logo" class="h-9 md:h-9.5! w-auto shrink-0 block dark:hidden" />
+    <img src="/assets/logo-light.svg" alt="Logo" class="h-9 md:h-9.5! w-auto shrink-0 hidden dark:block" />
+  </a>
+
+  <div class="hidden items-center md:gap-8 lg:gap-9 md:flex lg:pl-20"></div>
+
+  {/* Mobile menu */}
+  <div
+    data-mobile-menu
+    class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full"
+  >
+    {navLinks.map((link) => (
+      <a href={link.href}>{link.name}</a>
+    ))}
+    <button
+      data-mobile-menu-close
+      aria-label="Close menu"
+      class="aspect-square size-10 p-1 items-center justify-center bg-[#00DCC2] hover:bg-[#00DCC2]/80 transition text-[#042B31] rounded-md flex"
+    >
+      <Icon name="lucide:x" class="size-5" />
+    </button>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <ThemeToggle />
+    <a
+      href="mailto:hello@enstack.co.uk"
+      class="hidden md:flex font-medium items-center justify-center hover:bg-slate-100 dark:hover:bg-[#00DCC2]/10 transition px-4 py-2 border border-[#00DCC2] rounded-md"
+    >
+      Contact
+    </a>
+    <button
+      data-mobile-menu-open
+      aria-label="Open menu"
+      class="md:hidden"
+    >
+      <Icon name="lucide:menu" class="size-7 active:scale-90 transition" />
+    </button>
+  </div>
+</nav>
+
+<script>
+  function init() {
+    const menu = document.querySelector<HTMLDivElement>("[data-mobile-menu]");
+    const navbar = document.querySelector<HTMLElement>("[data-navbar]");
+    const openBtn = document.querySelector<HTMLButtonElement>("[data-mobile-menu-open]");
+    const closeBtn = document.querySelector<HTMLButtonElement>("[data-mobile-menu-close]");
+    if (!menu || !openBtn || !closeBtn) return;
+
+    function setOpen(open: boolean) {
+      menu!.classList.toggle("translate-x-0", open);
+      menu!.classList.toggle("-translate-x-full", !open);
+      document.body.classList.toggle("max-md:overflow-hidden", open);
+      navbar?.classList.toggle("backdrop-blur", !open);
+    }
+
+    openBtn.addEventListener("click", () => setOpen(true));
+    closeBtn.addEventListener("click", () => setOpen(false));
+  }
+
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>

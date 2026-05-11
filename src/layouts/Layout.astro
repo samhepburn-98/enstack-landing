@@ -1,0 +1,73 @@
+---
+import "@/styles/global.css";
+
+import Footer from "@/components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "EnStack — Apps, Websites & Brand Design",
+  description = "We build our own digital products and help other businesses do the same — apps, websites, and brand design.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo-dark.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+
+    {/* Pre-paint theme script — sets .dark on <html> before first render, no flash. */}
+    <script is:inline>
+      (function () {
+        try {
+          const stored = localStorage.getItem("theme");
+          const theme = stored ?? "dark";
+          if (theme === "dark") document.documentElement.classList.add("dark");
+          if (!stored) localStorage.setItem("theme", "dark");
+        } catch {}
+      })();
+    </script>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+
+    {/* Lenis smooth scroll */}
+    <script>
+      import Lenis from "lenis";
+
+      function start() {
+        const lenis = new Lenis({
+          duration: 1.2,
+          smoothWheel: true,
+          anchors: true,
+        });
+        const raf = (time: number) => {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+      }
+
+      start();
+    </script>
+  </body>
+</html>
